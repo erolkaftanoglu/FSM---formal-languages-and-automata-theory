@@ -49,7 +49,7 @@ public class Parser {
    Expression term() {
       Expression e = factor();
       Token t = tok;
-      while (t == Token.STAR || t == Token.SLASH)  {
+      while (t == Token.STAR || t == Token.SLASH || t == Token.POW)  {
          match(t);
          e = new Binary(e, t, factor());
          t = tok;
@@ -65,12 +65,13 @@ public class Parser {
       if (tok == Token.LEFT)  {
          match(Token.LEFT);
          Expression e = expr();
-         match(Token.RIGHT); 
+         match(Token.RIGHT);
          return e;
       }
       else if (tok == Token.IDENT)  {
          String f = lex.sval;
          match(Token.IDENT);
+         if(tok != Token.LEFT) return new Variable(f);
          match(Token.LEFT);
          Expression e = expr();
          match(Token.RIGHT);

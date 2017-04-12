@@ -10,7 +10,7 @@ public enum Token {
     
     LEFT("("), RIGHT(")"), EQUAL("="), PERIOD("."), 
     PLUS("+"), MINUS("-"), STAR("*"), SLASH("/"), COMMA(","),
-    IDENT("ident"), NUMBER("number"), EOF("eof"); 
+    IDENT("ident"), NUMBER("number"), EOF("eof"), POW("^");
 
     final String str;
     Token(String s) { str = s; }

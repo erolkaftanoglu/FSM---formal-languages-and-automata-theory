@@ -15,6 +15,7 @@ public class Binary implements Expression  {
       if (oper == Token.MINUS) return left.fValue()-right.fValue();
       if (oper == Token.STAR)  return left.fValue()*right.fValue();
       if (oper == Token.SLASH) return left.fValue()/right.fValue();
+      if (oper == Token.POW) return (float) Math.pow(left.fValue(), right.fValue());
       return Float.NaN;
    }
    public String toPostfix() { 

@@ -8,12 +8,18 @@ package automata.classwork.six;
  */
  
 public interface Expression {
-   /** Returns float value of this Expression */    
+   /** Returns float value of this Expression
+     * @return 
+      */    
    float fValue();
-   /** String representation of this Expression */   
+   /** String representation of this Expression
+     * @return  */   
+   @Override
    String toString();
-   /** Converts this Expression to postfix (RPN) */   
+   /** Converts this Expression to postfix (RPN)
+     * @return  */   
    String toPostfix();
-   /** Converts this Expression to a tree */   
+   /** Converts this Expression to a tree
+     * @return  */   
    String toTree();
 }
